@@ -37,33 +37,30 @@
 			<!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
 			<h2 class="text-center">Relação Álcool/Gasolina</h2>
 			<br> <img id="profile-img" class="profile-img-card"
-				src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+				src="images/logo.jpg" />
 			<p id="profile-name" class="profile-name-card"></p>
 			<form class="form-signin">
 				<span id="reauth-email" class="reauth-email"></span> <input
 					type="text" name="alcool" class="form-control"
 					placeholder="Preço do Alcool" required autofocus> <input
-					type="password" name="gasolina" class="form-control"
+					type="text" name="gasolina" class="form-control"
 					placeholder="Preço da Gasolina" required>
 				<button class="btn btn-lg btn-primary btn-block btn-signin"
 					type="submit">Calcular</button>
 				<br>
-				<h4>
-					Resultado:
 					<%
            	model.CalculadoraRelacao calculadora = (model.CalculadoraRelacao) request.getAttribute("calcular");
 
             if (calculadora.getPrecoAlcool() == 0 || calculadora.getPrecoGasolina() == 0) {
 %>
-					valores estão zerados, coloque os preços!!!
+					<h4>valores estão zerados, coloque os preços!!!</h4>
 					<%
             } else {
               %>
-					${calculadora.calcularResultado}
+					<h4>Resultado: <%=calculadora.calcularResultado()%></h4>
 					<%
             }
             %>
-				</h4>
 			</form>
 			<!-- /form -->
 		</div>

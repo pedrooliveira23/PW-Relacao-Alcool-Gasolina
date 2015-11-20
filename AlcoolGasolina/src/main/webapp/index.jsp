@@ -51,7 +51,7 @@
 				<h4>
 					Resultado:
 					<%
-           	CalculadoraRelacao calculadora = (CalculadoraRelacao) request.getAttribute("calcular");
+           	model.CalculadoraRelacao calculadora = (model.CalculadoraRelacao) request.getAttribute("calcular");
 
             if (calculadora.getPrecoAlcool() == 0 || calculadora.getPrecoGasolina() == 0) {
 %>
@@ -59,7 +59,7 @@
 					<%
             } else {
               %>
-					 ${calculadora.calcularResultado}
+					${calculadora.calcularResultado}
 					<%
             }
             %>
